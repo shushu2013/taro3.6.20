@@ -45,7 +45,37 @@ const config = {
           generateScopedName: '[name]__[local]___[hash:base64:5]'
         }
       }
-    }
+    },
+    webpackChain(chain, webpack) {
+      chain.module
+        .rule('stylus')
+          .oneOf('0')
+            .use('2')
+              .tap(options => {
+                // 自定义插件，把大写 PX/Px/pX 转为小写 px
+                const convertPxToLowercase = function (root, result) {
+                  // 正则参考 https://github.com/cuth/postcss-pxtorem/blob/master/lib/pixel-unit-regex.js
+                  const pxRegex = /("[^"]+"|'[^']+'|url\([^\)]+\)|(\d*\.?\d+))[Pp][xX]/g
+
+                  root.walkDecls(function (decl, i) {
+                    // This should be the fastest test and will remove most declarations
+                    if (/px/i.test(decl.value) === false) return
+
+                    const value = decl.value.replace(pxRegex, '$1px')
+                    decl.value = value
+                  })
+                }
+
+                const plugins = options.postcssOptions.plugins
+                plugins.splice(1, 0, convertPxToLowercase)
+
+                return options
+              })
+    },
+    miniCssExtractPluginOption: {
+      //忽略 css 文件引入顺序
+      ignoreOrder: true
+    },
   },
   h5: {
     publicPath: '/',

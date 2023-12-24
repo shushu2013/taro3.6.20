@@ -1,0 +1,81 @@
+lineClamp($count)
+  display -webkit-box
+  -webkit-line-clamp $count
+  -webkit-box-orient vertical
+  text-overflow ellipsis
+  overflow hidden
+  white-space normal
+  overflow-wrap break-word
+  word-break break-all
+
+.product-card-item
+  position relative
+  display flex
+  flex-direction column
+  width 100%
+  .product-cover-wrapper
+    position relative
+    width 100%
+    height 0
+    padding-bottom 70%
+    border-radius 4PX
+    overflow hidden
+  .product-cover
+    display flex
+    align-items center
+    justify-content center
+    position absolute
+    width 100%
+    height 100%
+    border-radius 4PX
+    background $brand-background
+  .product-red-packet-tag
+    position absolute
+    left 0
+    bottom 0
+    height 18PX
+    line-height 18PX
+    padding 0 5PX
+    border-top-right-radius 8PX
+    font-size 13PX
+    color #fff
+    background #FF4827
+    transform scale(.8)
+    transform-origin left bottom
+
+  .product-title
+    margin 6PX 0
+    font-size 14PX
+    lineClamp(1)
+    position relative
+    color #333
+    line-height 20PX
+    font-weight 500
+
+  .product-sale-wrapper
+    display flex
+    flex-direction row
+    align-items flex-end
+    flex-wrap nowrap
+
+  .product-sale
+    display flex
+    flex-direction row
+    align-items flex-end
+    flex-wrap nowrap
+
+  .product-unit
+    font-size 12PX
+    line-height 12PX
+    color #FF4827
+    padding-bottom 2PX
+    transform scale(.9)
+    transform-origin left bottom
+
+  .product-sale-price
+    font-size 16PX
+    line-height 18PX
+    color #FF4827
+    margin-left 2PX
+    margin-right 8PX
+    font-weight 500

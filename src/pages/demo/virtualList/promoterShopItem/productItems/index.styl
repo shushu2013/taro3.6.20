@@ -1,0 +1,53 @@
+
+.product-items
+  display flex
+  flex-direction row
+  position relative
+  white-space nowrap
+  overflow-x auto
+  overflow-y hidden
+  background #fff
+  &::-webkit-scrollbar
+    display: none
+
+  .product-item-wrapper
+    flex-shrink 0
+    position relative
+    display inline-flex
+    flex-direction column
+    width 72PX
+    + .product-item-wrapper
+      margin-left 8PX
+
+  .product-cover-wrapper
+    position relative
+    width 100%
+    height 0
+    padding-bottom 100%
+    border-radius 4PX
+    overflow hidden
+
+  .product-item-more
+    flex-shrink 0
+    display inline-block
+    height 64PX
+    line-height 22PX
+    width 22PX
+    box-sizing border-box
+    border-radius 2PX
+    font-size 12PX
+    background #f3f3f3
+    color #bbb
+    margin-left 10PX
+    writing-mode vertical-lr
+    text-orientation mixed
+    text-align center
+    letter-spacing 2PX
+    .product-more-text
+      transform scale(.8)
+      transform-origin center center
+
+  .placeholder
+    flex-shrink 0
+    width 1PX
+    margin-left 20PX

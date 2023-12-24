@@ -1,0 +1,243 @@
+lineClamp($count)
+  display -webkit-box
+  -webkit-line-clamp $count
+  -webkit-box-orient vertical
+  text-overflow ellipsis
+  overflow hidden
+  white-space normal
+  overflow-wrap break-word
+  word-break break-all
+
+// 设置背景图片，按分辨率显示
+// 写标准 css，插件会补上浏览器前缀 -webkit-image-set
+setBackgroundImage($1x, $2x, $repeat=no-repeat, $postion=0 0)
+  background $1x $repeat $postion
+  background-image image-set(
+    $1x 1x,
+    $2x 2x
+  )
+
+
+.promoter-shop-item
+  display flex
+  margin 0 8PX
+  margin-top 8PX
+
+  .promoter-shop-item-wrapper
+    position relative
+    width 100%
+    padding 16PX
+    display flex
+    flex-direction row
+    border-radius 8PX
+    background #ffffff
+    overflow hidden
+
+  .promoter-shop-item-img-wrapper
+    font-size 0
+    width 88PX
+    height 100%
+    display flex
+    flex-direction column
+    setBackgroundImage(
+      url('https://img.finstao.com/9c3931c8d52ba578f548e3de6465bdb3.png'),
+      url('https://img.finstao.com/9c3931c8d52ba578f548e3de6465bdb3.png'),
+      no-repeat,
+      bottom center
+    )
+    background-size 88PX auto
+
+  .promoter-shop-item-img
+    display inline-block
+    width 88PX
+    height 88PX
+    border-radius 4PX
+    &.has-product
+      height 100%
+
+  .customer-count-view
+    width 88PX
+    flex 1
+    margin-top 16PX
+    display flex
+    flex-direction column
+
+  .customer-hot
+    width 76PX
+    box-sizing border-box
+    padding-right 0
+    padding-left 7PX
+    font-weight 500
+    border-radius 0
+    border-top-right-radius 10PX
+    border-bottom-right-radius 10PX
+    .hot-icon
+      width 10PX
+      height 12PX
+      margin-right 4PX
+
+  .customer-desc
+    font-size 12PX
+    font-weight 500
+    color #333
+    letter-spacing 0
+    padding 0 8PX
+    margin-top 8PX
+
+  .promoter-shop-item-info
+    flex 1
+    display flex
+    flex-direction column
+    justify-content space-between
+    padding-left 8PX
+
+  .promoter-shop-item-title-wrapper
+    display flex
+    flex-direction row
+
+  .tag-status-component
+    margin-right 6PX
+
+  .promoter-shop-item-title
+    flex 1
+    position relative
+    font-size 15PX
+    line-height 21PX
+    height 21PX
+    color #333
+    font-weight 500
+    lineClamp(1)
+
+  .promoter-shop-item-line
+    display flex
+    flex-direction row
+    flex-wrap wrap
+    align-items flex-end
+  .shop-item-line-between
+    justify-content space-between
+  .shop-item-line-align-center
+    align-items center
+
+  .promoter-shop-item-rate
+    display flex
+    flex-direction row
+    align-items center
+    justify-content space-between
+    height 21PX
+    margin 4PX 0
+
+  .promoter-shop-rate-wrapper
+    display flex
+    flex-direction row
+    align-items center
+
+  .promoter-shop-rate-score
+    display flex
+    flex-direction row
+    align-items flex-end
+
+  .promoter-shop-rate-value
+    font-size 15PX
+    height 21PX
+    line-height 21PX
+    font-weight 500
+    color #EA2727
+    letter-spacing 0
+
+  .promoter-shop-rate-unit
+    font-size 12PX
+    line-height 21PX
+    color #EA2727
+    transform scale(.9)
+    transform-origin right bottom
+
+  .promoter-shop-rate-icon
+    margin-left 4PX
+    .nut-rate-item
+      margin-right 2PX
+      &:last-child
+        margin-right 0
+      .nut-rate-item__icon
+        color #FFDE27
+      .nut-rate-item__icon--disabled
+        color #EBEBEB
+      .nut-icon
+        width 12PX
+        height 12PX
+        font-size 12PX
+        line-height 12PX
+
+  .promoter-shop-price
+    margin-left 8PX
+    font-size 12PX
+    color #666666
+    letter-spacing 0
+
+  .promoter-shop-tag
+    font-size 12PX
+    height 16PX
+    line-height 16PX
+    color #B2B2B2
+    letter-spacing 0
+    transform scale(.9)
+    transform-origin left center
+
+  .promoter-shop-distance
+    font-size 12PX
+    color #B2B2B2
+    letter-spacing 0
+    transform scale(.9)
+    transform-origin right bottom
+
+  .promoter-shop-tips
+    margin-top 4PX
+    transform scale(.9)
+    transform-origin left bottom
+
+  .promoter-shop-tip-item
+    display flex
+    flex-direction row
+    align-items center
+    flex-wrap nowrap
+    height 20PX
+    padding 0 5PX
+    margin-right 6PX
+    border-radius 3PX
+    font-size 12PX
+    color #FF4827
+    letter-spacing 0
+    white-space nowrap
+    background rgba(255, 72, 39, .06)
+
+    .red-packet-icon
+      width 9PX
+      height 11PX
+      margin-right 5PX
+
+  .product-items-wrapper
+    position relative
+    width 100%
+    height 122PX
+    display flex
+    flex-direction row
+    margin-top 8PX
+    &:after
+      position absolute
+      content ''
+      top 0
+      right 0
+      bottom 0
+      width 20PX
+      background-image linear-gradient(-90deg, #fff 0%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0.0) 100%)
+  .product-items-list
+    position relative
+    flex 1
+    line-height 0
+    .product-items
+      position absolute
+      top 0
+      left 0
+      right 0
+      height 100%
+      line-height 0
+      font-size 0

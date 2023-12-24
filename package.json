@@ -37,6 +37,7 @@
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.7.7",
+    "@nutui/icons-react-taro": "0.0.1",
     "@nutui/nutui-react-taro": "^2.0.23",
     "@tarojs/components": "3.6.20",
     "@tarojs/helper": "3.6.20",
@@ -53,6 +54,9 @@
     "@tarojs/runtime": "3.6.20",
     "@tarojs/shared": "3.6.20",
     "@tarojs/taro": "3.6.20",
+    "lodash-es": "^4.17.21",
+    "number-precision": "^1.6.0",
+    "prop-types": "^15.8.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-refresh": "^0.11.0"

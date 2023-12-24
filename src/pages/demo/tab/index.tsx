@@ -29,7 +29,7 @@ export default class Index extends PureComponent <any> {
 
     return (
       <View className="tab-page">
-        <Tabs value={tab4value} onChange={this.handleTabChange}>
+        <Tabs name="kk" value={tab4value} onChange={this.handleTabChange}>
           <Tabs.TabPane title="低阶特卖">低阶特卖</Tabs.TabPane>
           <Tabs.TabPane title="上新日">上新日</Tabs.TabPane>
           <Tabs.TabPane title="百亿补贴">百亿补贴</Tabs.TabPane>

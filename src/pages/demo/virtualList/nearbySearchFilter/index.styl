@@ -1,0 +1,112 @@
+// 设置背景图片，按分辨率显示
+// 写标准 css，插件会补上浏览器前缀 -webkit-image-set
+setBackgroundImage($1x, $2x, $repeat=no-repeat, $postion=0 0)
+  background $1x $repeat $postion
+  background-image image-set(
+    $1x 1x,
+    $2x 2x
+  )
+
+.nearby-search-filter
+  position relative
+  display flex
+  flex-direction column
+  justify-content center
+  font-size 14PX
+  line-height 20PX
+  color #999
+  background transparent
+
+  .search-filter-container
+    display flex
+    flex-direction row
+    align-items center
+    justify-content space-between
+
+  .filter-items
+    flex 1
+    display flex
+    flex-direction row
+    align-items center
+    justify-content space-between
+
+    .filter-item
+      &.multiple
+        display flex
+        flex-direction row
+        align-items center
+      &.active
+        font-weight 500
+        color #FF4827
+
+  .filter-item-name
+    font-size 14PX
+    line-height 20PX
+
+  .filter-item-mode
+    display flex
+    flex-direction column
+    align-items center
+    margin-left 6PX
+    .mode-asc
+      width 8PX
+      height 4PX
+      setBackgroundImage(
+        url('https://img.finstao.com/a5111f126df220b031ce39d8f4e75c10.png'),
+        url('https://img.finstao.com/a5111f126df220b031ce39d8f4e75c10.png'),
+        no-repeat,
+        center center
+      )
+      background-size 8PX 4PX
+      &.active
+        setBackgroundImage(
+          url('https://img.finstao.com/9c0adf6627ad2ba47cdb5b141ed7664b.png'),
+          url('https://img.finstao.com/9c0adf6627ad2ba47cdb5b141ed7664b.png'),
+          no-repeat,
+          center center
+        )
+
+
+    .mode-desc
+      width 8PX
+      height 4PX
+      setBackgroundImage(
+        url('https://img.finstao.com/a5111f126df220b031ce39d8f4e75c10.png'),
+        url('https://img.finstao.com/a5111f126df220b031ce39d8f4e75c10.png'),
+        no-repeat,
+        center center
+      )
+      background-size 8PX 4PX
+      transform scaleY(-1)
+      &.active
+        setBackgroundImage(
+          url('https://img.finstao.com/9c0adf6627ad2ba47cdb5b141ed7664b.png'),
+          url('https://img.finstao.com/9c0adf6627ad2ba47cdb5b141ed7664b.png'),
+          no-repeat,
+          center center
+        )
+
+  .filter-more
+    display flex
+    flex-direction row
+    align-items center
+    &.active
+      color #FF4827
+
+    .filter-more-icon
+      width 16PX
+      height 16PX
+      margin-left 2PX
+
+  .search-filter-more-container
+    z-index 2
+    position fixed
+    display flex
+    flex-direction column
+    top 0
+    left 0
+    right 0
+    bottom 0
+    background rgba(0, 0, 0, 0.2)
+    .search-filter-more-mask
+      flex 1

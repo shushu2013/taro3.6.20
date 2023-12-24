@@ -1,0 +1,44 @@
+
+$DIVIDER_COLOR = rgba(0, 0, 0, 0.1)
+
+.tag-status-component
+  padding 0 4PX
+  height 18PX
+  line-height 18PX
+  font-size 12PX
+  border-radius 4PX
+  text-align center
+  white-space nowrap
+
+  + .tag-status-component
+    margin-left 10PX
+
+  &.tag-type-default
+    border 1px solid $DIVIDER_COLOR
+    background-color #fafafa
+    color #999
+
+  &.tag-type-primary
+    border 1px solid #b3d8ff
+    background-color #ecf5ff
+    color #2d8cf0
+
+  &.tag-type-info
+    border 1px solid #91d5ff
+    background-color #e6f7ff
+    color #2db7f5
+
+  &.tag-type-success
+    border 1px solid #8ce6b0
+    background-color #f6ffed
+    color #19be6b
+
+  &.tag-type-warning
+    border 1px solid #ffe58f
+    background-color #fffbe6
+    color #f90
+
+  &.tag-type-error
+    border 1px solid #ffa39e
+    background-color #fff1f0
+    color #ed4014

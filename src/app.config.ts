@@ -1,9 +1,10 @@
 export default defineAppConfig({
   pages: [
     'pages/index/index',
-    'pages/demo/list/index',
+    'pages/demo/virtualList/index',
     'pages/demo/tab/index',
     'pages/demo/scrollView/index',
+    'pages/demo/test/index',
   ],
   window: {
     backgroundTextStyle: 'light',

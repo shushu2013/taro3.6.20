@@ -1,0 +1,32 @@
+// 设置背景图片，按分辨率显示
+// 写标准 css，插件会补上浏览器前缀 -webkit-image-set
+setBackgroundImage($1x, $2x, $repeat=no-repeat, $postion=0 0)
+  background $1x $repeat $postion
+  background-image image-set(
+    $1x 1x,
+    $2x 2x
+  )
+
+.no-data-component
+  height 100%
+  min-height 230PX
+  overflow hidden
+  flex 1
+  display flex
+  justify-content center
+  align-items center
+
+  .no-data-wrapper
+    width 247PX
+    text-align center
+    setBackgroundImage(
+      url('https://img.finstao.com/627887f9c093291b30856b0d63365bb1.png'),
+      url('https://img.finstao.com/627887f9c093291b30856b0d63365bb1.png'),
+      no-repeat,
+      top center
+    )
+    padding-top 172PX
+
+  .no-data-text
+    color #999
+    font-size 14PX

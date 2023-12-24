@@ -21,7 +21,7 @@ export default class Index extends PureComponent <any> {
             direction="vertical"
             align="center"
           >
-            <Button
+            {/* <Button
               type="primary"
               onClick={() => {
                 Taro.navigateTo({
@@ -30,19 +30,29 @@ export default class Index extends PureComponent <any> {
               }}
             >
               Tab 页面
-            </Button>
+            </Button> */}
 
-            {/* <Button
+            <Button
               type="primary"
               onClick={() => {
                 Taro.navigateTo({
-                  url: '/pages/demo/list/index',
+                  url: '/pages/demo/virtualList/index',
                 })
               }}
             >
               虚拟列表
-            </Button> */}
+            </Button>
 
+            <Button
+              type="primary"
+              onClick={() => {
+                Taro.navigateTo({
+                  url: '/pages/demo/test/index',
+                })
+              }}
+            >
+              虚拟列表组件
+            </Button>
             {/* <Button
               type="primary"
               onClick={() => {
