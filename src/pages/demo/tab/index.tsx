@@ -13,7 +13,8 @@ definePageConfig({
 
 export default class Index extends PureComponent <any> {
   state: any = {
-    tab4value: 0
+    tab4value: 2,
+    defaultValue: 2,
   }
 
   handleTabChange = (value: any) => {
@@ -24,12 +25,17 @@ export default class Index extends PureComponent <any> {
 
   render() {
     const {
-      tab4value
+      tab4value,
+      defaultValue
     } = this.state
 
     return (
       <View className="tab-page">
-        <Tabs value={tab4value} onChange={this.handleTabChange}>
+        <Tabs
+          value={tab4value}
+          defaultValue={defaultValue}
+          onChange={this.handleTabChange}
+        >
           <Tabs.TabPane title="低阶特卖">低阶特卖</Tabs.TabPane>
           <Tabs.TabPane title="上新日">上新日</Tabs.TabPane>
           <Tabs.TabPane title="百亿补贴">百亿补贴</Tabs.TabPane>
